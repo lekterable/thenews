@@ -1,0 +1,22 @@
+{
+  "name": "nodekb",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Kornel Dubieniecki"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lekterable/thenews",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
