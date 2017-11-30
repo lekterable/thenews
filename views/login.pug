@@ -1,13 +1,13 @@
 extends layout
 block content
   div
-    h1 Login
+    h1 Zaloguj
     form(method='POST', action='/users/login')
       #form-group
-        label Username:
+        label Login:
         input.form-control(name='username', type='text')
       #form-group
-        label Password:
+        label Hasło:
         input.form-control(name='password', type='password')
       br
-      input.btn.btn-primary(type='submit', value='Submit')
+      input.btn.btn-primary(type='submit', value='Zaloguj')

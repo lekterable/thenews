@@ -1,4 +1,4 @@
 module.exports = {
-  database:'mongodb://localhost:27017/nodekb',
+  database: MONGODB_URI || 'mongodb://localhost/nodekb',
   secret:'yoursecret'
 }

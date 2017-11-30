@@ -8,20 +8,9 @@ const session = require('express-session')
 const passport = require('passport')
 const config = require('./config/database')
 
-mongoose.connect(config.database,{
-  useMongoClient: true,
-})
-
-let db = mongoose.connection
-
 //Połączenie z bazą
-db.once('open', ()=>{
-  console.log('Connected to MongoDB')
-})
-
-//Błędy bazy
-db.on('error', (err)=>{
-  console.log(err)
+mongoose.connect(config.database,{useMongoClient: true}, ()=>{
+  console.log('Połączono z bazą MongoDB');
 })
 
 //Aplikacja
@@ -33,6 +22,7 @@ let Article = require('./models/article')
 //Silnik szablonów
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+
 //Body Parser
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -103,6 +93,6 @@ app.use('/articles', require('./routes/articles'))
 app.use('/users', require('./routes/users'))
 
 //Start serwera
-app.listen(3000, ()=>{
+app.listen(process.env.PORT ||  3000, ()=>{
   console.log('Serwer działa na porcie 3000')
 })
